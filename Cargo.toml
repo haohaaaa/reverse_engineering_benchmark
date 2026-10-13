@@ -1,0 +1,17 @@
+cargo-features = ["panic-immediate-abort"]
+
+[package]
+name = "rust_test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+sha2 = "0.11"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "immediate-abort"
+strip = true
+overflow-checks = false
